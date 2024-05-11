@@ -1,5 +1,7 @@
 ## Desarrollo de APIs con FastAPI y MongoDB
 
+[![apis-fastapi-mongo-Db.png](https://i.postimg.cc/qMgvLdHZ/apis-fastapi-mongo-Db.png)](https://postimg.cc/GHwRLV2k)
+
 ###  Descripción
 Este proyecto es una API RESTful construida con FastAPI que interactúa con una base de datos MongoDB para realizar operaciones CRUD en una colección de personas. La API permite crear, leer, actualizar y eliminar registros de personas, así como listar todas las personas almacenadas en la base de datos.
 
