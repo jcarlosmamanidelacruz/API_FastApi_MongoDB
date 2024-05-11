@@ -1,9 +1,9 @@
 ## Proyecto FastAPI con MongoDB
 
-####  Descripción
+###  Descripción
 Este proyecto es una API RESTful construida con FastAPI que interactúa con una base de datos MongoDB para realizar operaciones CRUD en una colección de personas. La API permite crear, leer, actualizar y eliminar registros de personas, así como listar todas las personas almacenadas en la base de datos.
 
-#### Herramientas utilizadas
+### Herramientas utilizadas
 - Python: Un lenguaje de programación de alto nivel.
 - FastAPI: Un marco web moderno y rápido para construir APIs con Python.
 - MongoDB: Una base de datos NoSQL orientada a documentos.
@@ -11,7 +11,7 @@ Este proyecto es una API RESTful construida con FastAPI que interactúa con una 
 - Pymongo: Un cliente de MongoDB para Python.
 - Swagger: Una herramienta para documentar automáticamente APIs RESTful utilizando FastAPI.
 
-#### Estructura del proyecto
+### Estructura del proyecto
 El proyecto está estructurado en tres directorios principales:
 
 1. endpoint
@@ -28,7 +28,7 @@ El proyecto está estructurado en tres directorios principales:
 
 [![Estructura-del-proyecto.png](https://i.postimg.cc/c4frcJd1/Estructura-del-proyecto.png)](https://postimg.cc/hfPDDcJN)
 
-#### Funcionalidades principales
+### Funcionalidades principales
 
 El proyecto incluye las siguientes funcionalidades principales:
 
@@ -62,15 +62,15 @@ El proyecto incluye las siguientes funcionalidades principales:
 	
 	[![metodo-delete.png](https://i.postimg.cc/PNGP12KK/metodo-delete.png)](https://postimg.cc/tn5qjdKV)
 	
-#### Instrucciones para Configurar el Entorno del Proyecto
+### Instrucciones para Configurar el Entorno del Proyecto
 
 Sigue estos pasos para configurar el entorno de desarrollo del proyecto:
 
 2. Clona este repositorio en tu máquina local:
 
-		git clone <URL_del_repositorio>
+		git clone https://github.com/jcarlosmamanidelacruz/API_FastApi_MongoDB.git
 
-#### Configurar la Base de Datos
+### Configurar la Base de Datos
 
 Antes de ejecutar la aplicación, asegúrate de tener una instancia de MongoDB en funcionamiento. La aplicación FastAPI se conectará por defecto a una instancia local de MongoDB.
 
@@ -81,7 +81,7 @@ Antes de ejecutar la aplicación, asegúrate de tener una instancia de MongoDB e
 
 	[![coneccion-mongo-DB.png](https://i.postimg.cc/QCwtg0NV/coneccion-mongo-DB.png)](https://postimg.cc/wR5gg5md)
 	
-#### Activar el Entorno Virtual
+### Activar el Entorno Virtual
 
 Para mantener las dependencias del proyecto aisladas, utiliza un entorno virtual de Python. Sigue estos pasos para activar el entorno virtual:
 
@@ -93,13 +93,13 @@ Para mantener las dependencias del proyecto aisladas, utiliza un entorno virtual
 
 		venv\Scripts\activate
 
-#### Instalar Dependencias
+### Instalar Dependencias
 
 Una vez activado el entorno virtual, instala las dependencias del proyecto:
 
 		pip install -r requirements.txt
 
-#### Ejecutar la Aplicación
+### Ejecutar la Aplicación
 
 Para ejecutar la aplicación, utiliza el siguiente comando:
 
@@ -107,7 +107,7 @@ Para ejecutar la aplicación, utiliza el siguiente comando:
 
 La API estará disponible en http://127.0.0.1:8000/personas
 
-#### Pruebas Unitarias
+### Pruebas Unitarias
 
 A continuación se muestran las capturas de pantalla de las pruebas unitarias realizadas para cada endpoint utilizando Swagger:
 
@@ -117,7 +117,7 @@ Swagger es una herramienta de código abierto que permite documentar APIs de una
 
 [![Fast-API-Mongo-DB.png](https://i.postimg.cc/Y94TLH0c/Fast-API-Mongo-DB.png)](https://postimg.cc/ZBSwXX6j)
 
-#### Crear persona
+### Crear persona
 
 Para probar el método POST, sigue estos pasos:
 
@@ -135,7 +135,7 @@ Para probar el método POST, sigue estos pasos:
 
 	[![metodo-post-test-request.png](https://i.postimg.cc/HsG4ggCJ/metodo-post-test-request.png)](https://postimg.cc/kDctQLG9)
 	
-#### Listar todas las personas
+### Listar todas las personas
 
 Este endpoint devuelve una lista de todas las personas almacenadas en la base de datos. Al enviar una solicitud GET a este endpoint, la API devolverá una respuesta que incluirá los detalles de todas las personas almacenadas.
 
@@ -153,7 +153,7 @@ Para probar este GET, sigue estos pasos:
   
 	[![metodo-get-all-test.png](https://i.postimg.cc/KzjSxTB5/metodo-get-all-test.png)](https://postimg.cc/7CFQNfBC)
 
-#### Obtener persona por ID
+### Obtener persona por ID
 Este endpoint permite obtener los detalles de una persona específica según el ID único asignado por MongoDB al insertar un nuevo registro en la base de datos. Al enviar una solicitud GET a este endpoint con el ID único del objeto como parámetro, la API devolverá una respuesta que incluirá los detalles de la persona correspondiente.
 
 
@@ -171,7 +171,7 @@ Para probar este GET, sigue estos pasos:
 
 	[![metodo-get-ID-test.png](https://i.postimg.cc/GhVJJgrC/metodo-get-ID-test.png)](https://postimg.cc/dLRyJBLH)
 
-#### Actualizar persona
+### Actualizar persona
 
 Este endpoint permite actualizar los detalles de una persona existente en la base de datos utilizando el ID único generado por MongoDB al insertar el registro. Al enviar una solicitud PUT a este endpoint con el ID único del objeto como parámetro y los nuevos detalles de la persona en el cuerpo de la solicitud, la API actualizará los detalles de la persona correspondiente.
 
@@ -189,7 +189,7 @@ Para probar este PUT, sigue estos pasos:
 
 	[![metodo-put-test.png](https://i.postimg.cc/59nZtdzp/metodo-put-test.png)](https://postimg.cc/NL2NNnpr)
 
-#### Eliminar persona
+### Eliminar persona
 
 Este endpoint permite eliminar una persona de la base de datos utilizando el ID único generado por MongoDB al insertar el registro. Al enviar una solicitud DELETE a este endpoint con el ID único del objeto como parámetro, la API eliminará la persona correspondiente de la base de datos.
 
