@@ -1,34 +1,83 @@
 ## Desarrollo de APIs con FastAPI y MongoDB
 
-[![apis-fastapi-mongo-Db.png](https://i.postimg.cc/qMgvLdHZ/apis-fastapi-mongo-Db.png)](https://postimg.cc/GHwRLV2k)
+<img src="https://i.postimg.cc/qMgvLdHZ/apis-fastapi-mongo-Db.png" alt="">
 
-###  Descripción
+# Descripción general del proyecto
+
 Este proyecto es una API RESTful construida con FastAPI que interactúa con una base de datos MongoDB para realizar operaciones CRUD en una colección de personas. La API permite crear, leer, actualizar y eliminar registros de personas, así como listar todas las personas almacenadas en la base de datos.
+                        
 
-### Herramientas utilizadas
-- Python: Un lenguaje de programación de alto nivel.
-- FastAPI: Un marco web moderno y rápido para construir APIs con Python.
-- MongoDB: Una base de datos NoSQL orientada a documentos.
-- Pydantic: Una biblioteca para validación de datos y análisis de datos.
-- Pymongo: Un cliente de MongoDB para Python.
-- Swagger: Una herramienta para documentar automáticamente APIs RESTful utilizando FastAPI.
+### Funcionamiento del Proyecto a Nivel Macro
 
-### Estructura del proyecto
+1. Interfaz de Usuario:
+
+	La aplicación web presenta una interfaz de usuario construida con HTML, estilizada con Bootstrap y mejorada con JavaScript. Esta interfaz permite a los usuarios interactuar con las APIs de manera intuitiva.
+
+2. Operaciones CRUD:
+
+	La aplicación proporciona varios endpoints para realizar operaciones CRUD en la base de datos MongoDB. Estos endpoints son gestionados por FastAPI, que se encarga de recibir las solicitudes HTTP, procesarlas y devolver las respuestas adecuadas.
+
+	- Crear (POST /personas): Permite agregar nuevos registros a la base de datos.
+	- Leer (GET /personas y GET /personas/{id}): Permite recuperar todos los registros o un registro específico.
+	- Actualizar (PUT /personas/{id}): Permite modificar un registro existente.
+	- Eliminar (DELETE /personas/{id}): Permite eliminar un registro de la base de datos.
+
+3. Base de Datos MongoDB:
+
+	La base de datos MongoDB se utiliza para almacenar los datos de la aplicación de manera persistente. La colección persona se crea automáticamente al agregar un nuevo registro a la base de datos si aún no existe.
+
+4. Backend con FastAPI:
+
+	FastAPI maneja todas las solicitudes entrantes a los endpoints de la API, realiza las operaciones necesarias en la base de datos MongoDB y devuelve las respuestas a los clientes. Este framework permite el desarrollo rápido y eficiente de APIs robustas.
+
+5. Interacción con JavaScript:
+
+	Se utiliza JavaScript para mejorar la interacción de la página web, asegurando que el documento esté completamente cargado antes de ejecutar cualquier script, y proporcionando una experiencia de usuario más fluida.
+
+### Integraciones del Proyecto
+
+1. Python y FastAPI:
+
+	El proyecto está desarrollado en Python utilizando el framework FastAPI, que permite construir APIs rápidas y eficientes. Toda la lógica de la API está implementada en los archivos del directorio endpoint.
+
+2. Base de Datos MongoDB:
+
+	El proyecto utiliza MongoDB para almacenar los datos de manera persistente. Un cliente MongoDB (pymongo) se utiliza para interactuar con la base de datos desde Python.
+
+3. HTML:
+
+	La interfaz de usuario se construye utilizando archivos HTML que se encuentran en el directorio Templates. Estos archivos HTML renderizan la salida de las APIs creadas con FastAPI.
+
+4. Biblioteca de Bootstrap:
+
+	Bootstrap se utiliza para estilizar la interfaz de usuario, haciendo que sea más atractiva y fácil de usar. Los archivos CSS de Bootstrap se encuentran en el directorio Static/Css.
+
+5. JavaScript:
+
+	Se utiliza JavaScript para mejorar la interacción de la página web y asegurar que el documento esté completamente cargado antes de ejecutar cualquier script. Por ejemplo, se puede utilizar el siguiente código para esperar a que el documento esté completamente cargado.
+
+6. Pydantic:
+
+	Pydantic se utiliza para la validación y análisis de datos, asegurando que los datos enviados a la API cumplen con los esquemas definidos.
+
+7. Pymongo:
+
+	Pymongo es el cliente utilizado para interactuar con MongoDB desde la aplicación Python, permitiendo realizar operaciones CRUD en la base de datos.
+
+8. Swagger:
+
+	Swagger se utiliza para documentar automáticamente las APIs RESTful, proporcionando una interfaz interactiva para probar los endpoints directamente desde el navegador.
+
+
+### Estructura del Proyecto
+
 El proyecto está estructurado en tres directorios principales:
 
-1. endpoint
+1. endpoint: Este directorio contiene el archivo endpoint.py, que define las rutas de la API y las funciones que manejan las solicitudes HTTP asociadas.
+2. models_db: En este directorio se encuentra el archivo persona_db.py, que define el modelo de datos utilizado en la aplicación. La clase Persona define la estructura de los documentos de persona en la base de datos.
+3. schemas_db:  Este directorio contiene el archivo response_api.py, que define funciones para transformar los datos de la base de datos en un formato adecuado para ser devuelto como respuesta desde la API. Las funciones personaEntity y personasEntity se encargan de esta transformación.
 
-	Este directorio contiene el archivo endpoint.py, que define las rutas de la API y las funciones que manejan las solicitudes HTTP asociadas.
-
-2. models_db
-
-	En este directorio se encuentra el archivo persona_db.py, que define el modelo de datos utilizado en la aplicación. La clase Persona define la estructura de los documentos de persona en la base de datos.
-
-3. schemas_db
-
-	Este directorio contiene el archivo response_api.py, que define funciones para transformar los datos de la base de datos en un formato adecuado para ser devuelto como respuesta desde la API. Las funciones personaEntity y personasEntity se encargan de esta transformación.
-
-[![Estructura-del-proyecto.png](https://i.postimg.cc/c4frcJd1/Estructura-del-proyecto.png)](https://postimg.cc/hfPDDcJN)
+<img src="https://i.postimg.cc/c4frcJd1/Estructura-del-proyecto.png" alt="">
 
 ### Funcionalidades principales
 
@@ -38,31 +87,31 @@ El proyecto incluye las siguientes funcionalidades principales:
 
 	Aquí está el código para el endpoint que permite agregar una nueva persona a la base de datos:
 	
-	[![metodo-post.png](https://i.postimg.cc/mZVtpgqT/metodo-post.png)](https://postimg.cc/w3yq7ggr)
-
+	<img src="https://i.postimg.cc/mZVtpgqT/metodo-post.png" alt="">
+ 
 - Listar todas las personas: Devuelve una lista de todas las personas almacenadas en la base de datos.
 
 	Aquí está el código para el endpoint que devuelve una lista de todas las personas almacenadas en la base de datos:
 
-	[![metodo-get-all.png](https://i.postimg.cc/Gpvd6bLL/metodo-get-all.png)](https://postimg.cc/bGY7tcSW)
+	<img src="https://i.postimg.cc/Gpvd6bLL/metodo-get-all.png" alt="">
 	
 - Obtener persona por ID: Devuelve los detalles de una persona específica según su ID.
 
 	Aquí está el código para el endpoint que devuelve  los detalles de una persona específica según su ID.
-	
-	[![metodo-get-aid.png](https://i.postimg.cc/nrh16ctN/metodo-get-aid.png)](https://postimg.cc/hzNxmnv0)
+
+	<img src="https://i.postimg.cc/nrh16ctN/metodo-get-aid.png" alt="">
 
 - Actualizar persona: Actualiza los detalles de una persona existente en la base de datos.
 
 	Aquí está el código para el endpoint que actualiza  los detalles de una persona existente en la base de datos según su ID.
 	
-	[![metodo-put.png](https://i.postimg.cc/FRy92Nxb/metodo-put.png)](https://postimg.cc/8JCQv89s)
-
+	<img src="https://i.postimg.cc/FRy92Nxb/metodo-put.png" alt="">
+ 
 - Eliminar persona: Elimina una persona de la base de datos según su ID.
 
 	Aquí está el código para el endpoint que elimina una persona de la base de datos según su ID.
 	
-	[![metodo-delete.png](https://i.postimg.cc/PNGP12KK/metodo-delete.png)](https://postimg.cc/tn5qjdKV)
+	<img src="https://i.postimg.cc/PNGP12KK/metodo-delete.png" alt="">
 	
 ### Instrucciones para Configurar el Entorno del Proyecto
 
@@ -81,8 +130,8 @@ Antes de ejecutar la aplicación, asegúrate de tener una instancia de MongoDB e
 2. Inicia el servidor de MongoDB.
 3. Si no existe la colección persona, la aplicación FastAPI creara la colección de manera automática al ejecutar el endpoint que permite agregar una nueva persona a la base de datos:
 
-	[![coneccion-mongo-DB.png](https://i.postimg.cc/QCwtg0NV/coneccion-mongo-DB.png)](https://postimg.cc/wR5gg5md)
-	
+	<img src="https://i.postimg.cc/QCwtg0NV/coneccion-mongo-DB.png" alt="">
+ 
 ### Activar el Entorno Virtual
 
 Para mantener las dependencias del proyecto aisladas, utiliza un entorno virtual de Python. Sigue estos pasos para activar el entorno virtual:
@@ -117,7 +166,7 @@ Puedes probar las APIs tú mismo utilizando Swagger. Visita http://127.0.0.1:800
 
 Swagger es una herramienta de código abierto que permite documentar APIs de una manera sencilla y visual. Proporciona una interfaz interactiva que facilita la comprensión y prueba de los endpoints de la API.
 
-[![Fast-API-Mongo-DB.png](https://i.postimg.cc/Y94TLH0c/Fast-API-Mongo-DB.png)](https://postimg.cc/ZBSwXX6j)
+<img src="https://i.postimg.cc/Y94TLH0c/Fast-API-Mongo-DB.png" alt="">
 
 ### Crear persona
 
@@ -131,11 +180,11 @@ Para probar el método POST, sigue estos pasos:
 
 4. Damos click en Execute.
 
-	[![metodo-post-test.png](https://i.postimg.cc/7Z2VzZMn/metodo-post-test.png)](https://postimg.cc/cvdwyZzv)
-
+	<img src="https://i.postimg.cc/7Z2VzZMn/metodo-post-test.png" alt="">
+ 
 	La respuesta del método POST incluirá un objeto JSON con los detalles de la persona recién creada, como su nombre, apellido, fecha de nacimiento, etc.
 
-	[![metodo-post-test-request.png](https://i.postimg.cc/HsG4ggCJ/metodo-post-test-request.png)](https://postimg.cc/kDctQLG9)
+	<img src="https://i.postimg.cc/HsG4ggCJ/metodo-post-test-request.png" alt="">
 	
 ### Listar todas las personas
 
@@ -153,7 +202,7 @@ Para probar este GET, sigue estos pasos:
 
 	A continuación, se muestra una captura de pantalla del método GET en Swagger, donde puedes ver cómo enviar una solicitud GET y qué esperar como respuesta:
   
-	[![metodo-get-all-test.png](https://i.postimg.cc/KzjSxTB5/metodo-get-all-test.png)](https://postimg.cc/7CFQNfBC)
+	<img src="https://i.postimg.cc/KzjSxTB5/metodo-get-all-test.png" alt="">
 
 ### Obtener persona por ID
 Este endpoint permite obtener los detalles de una persona específica según el ID único asignado por MongoDB al insertar un nuevo registro en la base de datos. Al enviar una solicitud GET a este endpoint con el ID único del objeto como parámetro, la API devolverá una respuesta que incluirá los detalles de la persona correspondiente.
@@ -171,7 +220,7 @@ Para probar este GET, sigue estos pasos:
 
 5. Observa la respuesta devuelta por la API, que incluirá los detalles de la persona correspondiente.
 
-	[![metodo-get-ID-test.png](https://i.postimg.cc/GhVJJgrC/metodo-get-ID-test.png)](https://postimg.cc/dLRyJBLH)
+	<img src="https://i.postimg.cc/GhVJJgrC/metodo-get-ID-test.png" alt="">
 
 ### Actualizar persona
 
@@ -189,7 +238,7 @@ Para probar este PUT, sigue estos pasos:
 
 5. Observa la respuesta devuelta por la API, que incluirá los detalles actualizados de la persona correspondiente.
 
-	[![metodo-put-test.png](https://i.postimg.cc/59nZtdzp/metodo-put-test.png)](https://postimg.cc/NL2NNnpr)
+	<img src="https://i.postimg.cc/59nZtdzp/metodo-put-test.png" alt="">
 
 ### Eliminar persona
 
@@ -205,4 +254,4 @@ Para probar este DELETE, sigue estos pasos:
 
 4. Observa la respuesta devuelta por la API. Si la eliminación es exitosa, la API devolverá un mensaje indicando que el registro de la persona se ha eliminado con éxito. Si no se encuentra ninguna persona con el ID especificado, la API devolverá un error 404.
 
-	[![metodo-delete-test.png](https://i.postimg.cc/0QdF1hGg/metodo-delete-test.png)](https://postimg.cc/2by24cXT)
+	<img src="https://i.postimg.cc/0QdF1hGg/metodo-delete-test.png" alt="">
